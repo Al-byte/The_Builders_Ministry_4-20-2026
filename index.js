@@ -1,12 +1,36 @@
 $(document).ready(function() {    
     // On window load, wait 500ms, then show modal only if flag is false
-    $(window).on('load',function(){
-    var delayMs = 500; // delay in milliseconds
-    
-    setTimeout(function(){
-        $('#introModal').modal('show');
-    }, delayMs);
+    $(window).on('load', function(){
+        var delayMs = 500;
+
+        setTimeout(function(){
+
+            // ✅ ONLY show modal if NOT coming from #contact
+            if (window.location.hash !== '#contact') {
+                $('#introModal').modal('show');
+            }
+
+        }, delayMs);
     });
+
+    var players = [];
+
+    // Find all Vimeo iframes
+    $('iframe[src*="vimeo.com"]').each(function () {
+      var player = new Vimeo.Player(this);
+      players.push(player);
+
+      // When a video starts playing
+      player.on('play', function () {
+        $.each(players, function (i, otherPlayer) {
+          if (otherPlayer !== player) {
+            otherPlayer.pause();
+          }
+        });
+      });
+    });
+
+    
 
     
     
