@@ -27,8 +27,12 @@
     color: rgb(111, 65, 42);
   }
 
-  h1 {
-    color: rgb(111, 65, 42);
+  #home h1 {
+    color: white !important;
+  }
+
+  h1, h4 {
+    color: black !important;
   }
   
   html, body {
@@ -79,6 +83,10 @@ html {
 
 .red {
   color: red;
+}
+
+i {
+  color: darkblue !important;
 }
 
 .written_sermon_banner, .teaching_banner {
@@ -222,7 +230,8 @@ header .align-items-center {
 }
 
 .index_info_title {
-  color: rgb(111, 65, 42);
+  color: black;
+
 }
 
 .contact_img {
@@ -290,7 +299,7 @@ header .align-items-center {
   }
 
   .nav-link {
-    color: rgb(111, 65, 42);
+    color: black;
   }
 
   .web-nav {
